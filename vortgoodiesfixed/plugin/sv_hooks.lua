@@ -20,6 +20,8 @@ end;
 function PLUGIN:PlayerFootstep(player)
 	if (self:PlayerIsVortigaunt(player)) then
 		player:EmitSound("npc/vort/vort_foot"..math.random(4)..".wav");
+
+		return true;
 	end;
 end;
 --]]
