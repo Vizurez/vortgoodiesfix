@@ -3,6 +3,7 @@
 local PLUGIN = PLUGIN;
 
 Clockwork.kernel:IncludePrefixed("sv_hooks.lua");
+Clockwork.kernel:IncludePrefixed("cl_plugin.lua");
 
 -- Called when the Clockwork schema has loaded.
 function PLUGIN:ClockworkSchemaLoaded()
@@ -89,4 +90,15 @@ function PLUGIN:ClockworkSchemaLoaded()
 		["jump"] = ACT_BARNACLE_CHOMP, -- Change this to 'ACT_IDLE' or something if you don't like the weird jumping animation. Alternatively, use EP2 anims.
 		["sit"] = "chess_wait"
 	};
+end;
+
+-- A function to get whether or not the player is a vortigaunt.
+function PLUGIN:PlayerIsVortigaunt(player)
+	local faction = player:GetFaction();
+
+	if (string.find(player:GetModel(), "vortigaunt") or faction == FACTION_VORTSLAVE or faction == FACTION_VORT) then
+		return true;
+	end;
+
+	return false;
 end;
