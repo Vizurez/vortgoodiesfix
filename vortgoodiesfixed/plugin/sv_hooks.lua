@@ -9,8 +9,12 @@ function PLUGIN:PlayerGiveWeapons(player)
 end;
 
 function PLUGIN:PlayerPlayPainSound(player, gender, damageInfo)
-	if (self:PlayerIsVortigaunt(player) and damageInfo:IsBulletDamage() and math.random() <= 0.5) then
-		return "vo/npc/vortigaunt/vortigese0"..table.Random({"4", "7", "8"})..".wav";
+	if (self:PlayerIsVortigaunt(player) and damageInfo:IsBulletDamage()) then
+		if (math.random() <= 0.5) then
+			return "vo/npc/vortigaunt/vortigese0"..table.Random({"4", "7", "8"})..".wav";
+		end;
+
+		return false;
 	end;
 end;
 
@@ -20,7 +24,6 @@ end;
 function PLUGIN:PlayerFootstep(player)
 	if (self:PlayerIsVortigaunt(player)) then
 		player:EmitSound("npc/vort/vort_foot"..math.random(4)..".wav");
-
 		return true;
 	end;
 end;
