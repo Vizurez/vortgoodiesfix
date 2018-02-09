@@ -1,5 +1,6 @@
 local PLUGIN = PLUGIN;
 
+-- Hide Vortigaunt head/neck bones from first person view if cwAnimatedLegs is installed.
 if (cwAnimatedLegs and cwAnimatedLegs.BoneHoldTypes) then
 	for k, v in pairs(cwAnimatedLegs.BoneHoldTypes) do
 		local vortBones = {
@@ -12,9 +13,11 @@ if (cwAnimatedLegs and cwAnimatedLegs.BoneHoldTypes) then
 	end;
 end;
 
--- A function to apply bone manipulations when a character is loaded.
+-- A function to apply bone manipulations when a character is loaded if cwAnimatedLegs is installed.
 function PLUGIN:PlayerCharacterInitialized()
-	cwAnimatedLegs:WeaponChanged();
+	if (cwAnimatedLegs) then
+		cwAnimatedLegs:WeaponChanged();
+	end;
 end;
 
 -- A function to set a Vortigaunt player's typing display position.
