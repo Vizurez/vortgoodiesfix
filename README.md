@@ -2,7 +2,7 @@
 
 Adds a broom SWEP that Enslaved Vortigaunts spawn with. Primary fire makes the character sweep. The jumping animation is kinda messed up, however this can be fixed by using EP2 Vortigaunt animations and changing the stored animations to the EP2 ones.
 
-This is a fixed version of NightAngel's 'Vortigaunt Goodies' plugin, which can be found in their plugin collection here: http://forums.cloudsixteen.com/threads/nightangels-plugins.5926/
+This is a fixed version of NightAngel's 'Vortigaunt Goodies' plugin, which can be found in their plugin collection here: http://legacy.cloudsixteen.com/threads/nightangels-plugins.5926/
 
 The changes:
 
